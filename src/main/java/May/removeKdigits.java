@@ -9,7 +9,6 @@ import java.util.Stack;
 public class removeKdigits {
     public String removeKdigits(String num, int k) {
         Stack<Character> stack = new Stack<Character>();
-
         for (char digit : num.toCharArray()) {
             while (stack.size() > 0 && k > 0 && stack.peek() > digit) {
                 stack.pop();
@@ -17,7 +16,6 @@ public class removeKdigits {
             }
             stack.push(digit);
         }
-
         for (int i = 0; i < k; i++) {
             stack.pop();
         }
