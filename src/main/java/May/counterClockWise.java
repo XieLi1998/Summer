@@ -16,11 +16,8 @@ public class counterClockWise {
             this.val = val;
         }
     }
-
     ArrayList<TreeNode> list = new ArrayList<>();
-
     public ArrayList<TreeNode> counterClockWise(TreeNode root) {
-
         return null;
     }
 }
