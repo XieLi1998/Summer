@@ -40,10 +40,11 @@ public class Clone {
         //拆分
         cur = pHead;
         RandomListNode pCloneHead = pHead.next;
-        while (cur.next != null) {
-            RandomListNode next = cur.next;
-            cur.next = next.next;
-            cur = next;
+        while (cur != null) {
+            RandomListNode clone = cur.next;
+            cur.next = clone.next;
+            clone.next = clone.next == null ? null : clone.next.next;
+            cur = cur.next;
         }
 
         return pCloneHead;
