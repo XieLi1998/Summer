@@ -18,7 +18,6 @@ public class Clone {
     public RandomListNode Clone(RandomListNode pHead) {
         if (pHead == null)
             return null;
-
         //插入新节点
         RandomListNode cur = pHead;
         while (cur != null) {
@@ -27,7 +26,6 @@ public class Clone {
             cur.next = clone;
             cur = clone.next;
         }
-
         //建立random 链接
         cur = pHead;
         while (cur != null) {
@@ -36,7 +34,6 @@ public class Clone {
                 clone.random = cur.random.next;
             cur = clone.next;
         }
-
         //拆分
         cur = pHead;
         RandomListNode pCloneHead = pHead.next;
@@ -46,7 +43,6 @@ public class Clone {
             clone.next = clone.next == null ? null : clone.next.next;
             cur = cur.next;
         }
-
         return pCloneHead;
     }
 
