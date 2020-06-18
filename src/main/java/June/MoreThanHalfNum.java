@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by xieli on 2020/6/18.
  */
-public class MoreThanHalfNum_Solution {
+public class MoreThanHalfNum {
 
     public int MoreThanHalfNum_Solution(int[] array) {
         if (array == null || array.length == 0)
