@@ -11,4 +11,11 @@ public class Sum_Solution {
         return sum >> 1;
     }
 
+    //逻辑短路
+    public int Sum_Solution_02(int n) {
+        //boolean 只是为了不报错
+        boolean res = n > 1 && ((n += Sum_Solution_02(n - 1)) > 0);
+        return n;
+    }
+
 }
