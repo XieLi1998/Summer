@@ -23,13 +23,6 @@ public class KMP {
             X = dp[X][pat.charAt(j)];
         }
 
-//        for (int j = 1; j < M; j++) {
-//            for (int c = 0; c < 256; c++) {
-//                dp[j][c] = dp[X][c];
-//            }
-//            dp[j][pat.charAt(j)] = j + 1;
-//            X = dp[X][pat.charAt(j)];
-//        }
     }
 
     public int search(String txt) {
