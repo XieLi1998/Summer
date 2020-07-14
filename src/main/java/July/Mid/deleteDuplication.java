@@ -23,8 +23,34 @@ public class deleteDuplication {
             }
             return deleteDuplication(node);
         } else {
-            pHead.next=deleteDuplication(pHead.next);
+            pHead.next = deleteDuplication(pHead.next);
             return pHead;
         }
+    }
+
+    //非递归
+    public ListNode deleteDuplicationV2(ListNode pHead) {
+        if (pHead == null || pHead.next == null)
+            return pHead;
+
+        ListNode head = new ListNode(-1);
+        ListNode tail = head;
+
+        while (pHead != null) {
+            ListNode node = pHead.next;
+            boolean flag = false;
+            while (node != null && node.val == pHead.val) {
+                flag = true;
+                node = node.next;
+            }
+            if (!flag) {
+                tail.next = pHead;
+                tail = tail.next;
+            }
+            pHead = node;
+        }
+        
+        tail.next = null;
+        return head.next;
     }
 }
