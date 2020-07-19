@@ -42,4 +42,26 @@ public class StrToInt {
         }
         return flag * res;
     }
+
+    public int StrToIntV3(String str) {
+        if (str == null || "".equals(str.trim()))
+            return 0;
+        char[] chars = str.trim().toCharArray();
+        int res = 0;
+        int i = 1, flag = 1;
+        if (chars[0] == '-')
+            flag = -1;
+        else if (chars[0] != '+')
+            i = 0;
+
+        for (int j = i; j < chars.length; j++) {
+            if (chars[j] < '0' || chars[j] > '9')
+                break;
+            if (res > Integer.MAX_VALUE / 10 ||
+                    res == Integer.MAX_VALUE / 10 && chars[j] > '7')
+                return flag == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            res = res * 10 + (chars[j] - '0');
+        }
+        return flag * res;
+    }
 }
