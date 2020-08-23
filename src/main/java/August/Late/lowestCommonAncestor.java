@@ -47,4 +47,9 @@ public class lowestCommonAncestor {
             return left;
         return root;
     }
+
+    public static void main(String[] args) {
+        String s1=new String("aaa");
+        String s2=s1.intern();
+    }
 }
